@@ -11,6 +11,7 @@ function init() {
   const option = document.createElement("option");
   const button = document.querySelector("button");
   const text = document.querySelector("textarea");
+  const face = document.querySelector("img");
 
   //get all of the voices available for the current device
   let voices = [];
@@ -46,9 +47,15 @@ function init() {
         utterThis.voice = voice;
       }
     }
-    //utterThis.pitch = pitch.value;
-    //utterThis.rate = rate.value;
+    
+    //makes the face chance when speaking
     synth.speak(utterThis);
+    if(synth.speaking){
+      face.src = "assets/images/smiling-open.png";
+    }
+    utterThis.addEventListener("end", function(){
+      face.src = "assets/images/smiling.png";
+    });
   });
   
 }
