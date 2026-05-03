@@ -30,12 +30,16 @@ function init() {
   slider.addEventListener('change', function(){
     if(slider.value == 0){
       volumeIcon.src = "assets/icons/volume-level-0.svg";
+      sound.volume = slider.value /100;
     }else if(slider.value < 33 ){
       volumeIcon.src = "assets/icons/volume-level-1.svg";
+      sound.volume = slider.value /100;
     }else if(slider.value < 67 ){
       volumeIcon.src = "assets/icons/volume-level-2.svg";
+      sound.volume = slider.value /100;
     }else{
       volumeIcon.src = "assets/icons/volume-level-3.svg";
+      sound.volume = slider.value /100;
     }
   });
 }
