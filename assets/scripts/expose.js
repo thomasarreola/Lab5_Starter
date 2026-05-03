@@ -9,6 +9,7 @@ function init() {
   const button = document.querySelector("button");
   const slider = document.getElementById("volume");
   const volumeIcon = document.querySelector("input + img");
+  const confetti = new JSConfetti();
 
   dropdown.addEventListener('change', function() {
     if(dropdown.value == "air-horn"){
@@ -26,6 +27,9 @@ function init() {
   });
   button.addEventListener('click', function(){
     sound.play();
+    if(dropdown.value == "party-horn"){
+      confetti.addConfetti();
+    }
   });
   slider.addEventListener('change', function(){
     if(slider.value == 0){
