@@ -7,6 +7,8 @@ function init() {
   const displayImage = document.querySelector("header + img")
   const sound = document.querySelector("audio");
   const button = document.querySelector("button");
+  const slider = document.getElementById("volume");
+  const volumeIcon = document.querySelector("input + img");
 
   dropdown.addEventListener('change', function() {
     if(dropdown.value == "air-horn"){
@@ -24,5 +26,16 @@ function init() {
   });
   button.addEventListener('click', function(){
     sound.play();
+  });
+  slider.addEventListener('change', function(){
+    if(slider.value == 0){
+      volumeIcon.src = "assets/icons/volume-level-0.svg";
+    }else if(slider.value < 33 ){
+      volumeIcon.src = "assets/icons/volume-level-1.svg";
+    }else if(slider.value < 67 ){
+      volumeIcon.src = "assets/icons/volume-level-2.svg";
+    }else{
+      volumeIcon.src = "assets/icons/volume-level-3.svg";
+    }
   });
 }
