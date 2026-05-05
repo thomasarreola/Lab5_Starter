@@ -10,8 +10,10 @@
 2. You could definetely design a unit test for testing a feature that prevents the user from typing more then 80
    characters. Assuming that you have a function which you pass the string to that returns true or false depending
    on if the string is less then 80 characters you could set up a unit test to test with various different strings.
-
-##Links
+ 
+## Links
 [Main Page](https://thomasarreola.github.io/Lab5_Starter/)
+
 [expose](expose.html)
+
 [explore](explore.html)
